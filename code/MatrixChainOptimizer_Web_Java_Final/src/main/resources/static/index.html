@@ -1,0 +1,497 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1.0">
+
+<title>
+Matrix Chain 3D Optimizer
+</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+</head>
+
+<body>
+
+<div class="bggrid"></div>
+
+
+<header>
+
+    <div class="mark">
+        ◇
+    </div>
+
+    <div>
+
+        <h1>
+            MATRIX CHAIN
+            <span>OPTIMIZER</span>
+        </h1>
+
+        <p>
+            3D Interval Dynamic Programming Visualizer
+            • Java Powered
+        </p>
+
+    </div>
+
+    <div class="pill">
+        JAVA / SPRING BOOT
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="intro">
+
+    <div>
+
+        <div class="eyebrow">
+            LIVE ALGORITHM VISUALIZATION
+        </div>
+
+        <h2>
+
+            Watch the matrices
+
+            <br>
+
+            <b>
+                find their best order.
+            </b>
+
+        </h2>
+
+        <p>
+
+            Enter matrix dimensions and
+            watch Interval Dynamic Programming
+            determine the optimal multiplication order.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INPUT -->
+
+<section class="card input">
+
+    <label>
+        MATRIX DIMENSIONS
+    </label>
+
+    <div class="row">
+
+        <input
+            id="dims"
+            value="36, 29, 44, 17, 32"
+        >
+
+        <button id="opt">
+            OPTIMIZE ↗
+        </button>
+
+        <button
+            id="random"
+            class="ghost"
+        >
+            RANDOM
+        </button>
+
+    </div>
+
+    <small>
+
+        Example:
+        10, 30, 5, 60, 20, 10
+
+    </small>
+
+</section>
+
+
+<!-- METRICS -->
+
+<section class="metrics">
+
+    <div class="metric card">
+
+        <small>
+            OPTIMIZED COST
+        </small>
+
+        <strong id="oc">
+            —
+        </strong>
+
+    </div>
+
+
+    <div class="metric card">
+
+        <small>
+            NAÏVE COST
+        </small>
+
+        <strong id="nc">
+            —
+        </strong>
+
+    </div>
+
+
+    <div class="metric card">
+
+        <small>
+            OPERATIONS SAVED
+        </small>
+
+        <strong id="sv">
+            —
+        </strong>
+
+    </div>
+
+
+    <div class="metric card">
+
+        <small>
+            EFFICIENCY GAIN
+        </small>
+
+        <strong id="eg">
+            —
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- 3D VISUALIZATION -->
+
+<section class="card visual-card">
+
+
+    <div class="visual-head">
+
+        <div>
+
+            <div class="section-title">
+
+                3D MULTIPLICATION DEMONSTRATION
+
+            </div>
+
+            <div id="stageText">
+
+                Run optimization to load
+                the optimal sequence.
+
+            </div>
+
+        </div>
+
+
+        <div class="controls">
+
+            <button id="play">
+                ▶ PLAY
+            </button>
+
+            <button
+                id="prev"
+                class="ghost"
+            >
+                ‹
+            </button>
+
+            <button
+                id="next"
+                class="ghost"
+            >
+                ›
+            </button>
+
+            <button
+                id="reset"
+                class="ghost"
+            >
+                RESET
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- 3D SCENE -->
+
+    <div
+        class="scene"
+        id="scene"
+    >
+
+        <div class="floor"></div>
+
+        <div class="axis x"></div>
+
+        <div class="axis y"></div>
+
+        <div class="axis z"></div>
+
+
+        <!-- CENTRAL 3D CORE -->
+
+        <div class="core">
+
+            <div class="ring r1"></div>
+
+            <div class="ring r2"></div>
+
+            <div class="ring r3"></div>
+
+            <div class="corecube"></div>
+
+        </div>
+
+
+        <!-- MATRICES -->
+
+        <div
+            class="matrix m1"
+            id="m1"
+        >
+
+            <span>
+                A1
+            </span>
+
+        </div>
+
+
+        <div
+            class="matrix m2"
+            id="m2"
+        >
+
+            <span>
+                A2
+            </span>
+
+        </div>
+
+
+        <div
+            class="matrix m3"
+            id="m3"
+        >
+
+            <span>
+                A3
+            </span>
+
+        </div>
+
+
+        <div
+            class="matrix m4"
+            id="m4"
+        >
+
+            <span>
+                A4
+            </span>
+
+        </div>
+
+
+        <div
+            class="matrix m5"
+            id="m5"
+        >
+
+            <span>
+                A5
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- STEP BAR -->
+
+    <div class="stepbar">
+
+        <div>
+
+            <span id="stepNo">
+                STEP 0
+            </span>
+
+            <b id="stepLabel">
+                Ready
+            </b>
+
+        </div>
+
+
+        <div class="progress">
+
+            <i id="progress"></i>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- LOWER -->
+
+<section class="lower">
+
+
+    <div class="card order">
+
+        <div class="section-title">
+
+            OPTIMAL PARENTHESIZATION
+
+        </div>
+
+        <div id="order">
+
+            —
+
+        </div>
+
+        <p id="explain">
+
+            Java Interval DP engine
+            calculates the minimum-cost
+            multiplication order.
+
+        </p>
+
+    </div>
+
+
+    <div class="card table-card">
+
+        <div class="section-title">
+
+            INTERVAL DP COST TABLE
+
+        </div>
+
+        <div class="tablewrap">
+
+            <table id="table"></table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="card how">
+
+    <div>
+
+        <div class="section-title">
+
+            HOW IT WORKS
+
+        </div>
+
+
+        <div class="flow">
+
+            <span>
+                INPUT
+            </span>
+
+            <i>→</i>
+
+            <span>
+                INTERVAL DP
+            </span>
+
+            <i>→</i>
+
+            <span>
+                BEST SPLIT
+            </span>
+
+            <i>→</i>
+
+            <span>
+                3D MERGE
+            </span>
+
+            <i>→</i>
+
+            <span>
+                MINIMUM COST
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="complex">
+
+        TIME
+        <b>O(n³)</b>
+
+        &nbsp;
+
+        SPACE
+        <b>O(n²)</b>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    Matrix Chain Multiplication
+    •
+    Interval Dynamic Programming Demonstration
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
