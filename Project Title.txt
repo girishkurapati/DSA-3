@@ -1,1 +1,1 @@
-Matrix Chain Multiplication Optimization using Interval Dynamic Programming
+ 3D GRAPHIC RENDERING USING  MATRXI CHAIN MULTIPLICATION 
