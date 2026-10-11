@@ -1,0 +1,11 @@
+3D Graphic Designing Using Matrix Chain Multiplication
+
+Windows CMD:
+1. Open this folder.
+2. If Maven is installed: mvn clean package
+3. Run: java -jar target\graphic-designing-mcm-1.0.0.jar
+4. Open: http://localhost:8080
+
+Alternative port:
+java -jar target\graphic-designing-mcm-1.0.0.jar 8090
+Then open http://localhost:8090
